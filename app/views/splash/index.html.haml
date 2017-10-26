@@ -1,0 +1,55 @@
+%section.lightimage
+  .container
+    .row
+      .inner-column
+        %h1 SHIPSPEC
+
+        %p.info PROTECT
+
+        = link_to "Try Free", root_url, class: "btn btn-primary btn-lg"
+
+%section.colored.primary#about
+  .container
+    .row
+      .inner-column
+        %h2 Time to get organized?
+
+        %p If your auto shipping business is growing, then the answer is yes. Shipspec is a tool designed specifically to streamline the process of vehicle inspection, and shipment tracking. Your clients can be optionaly notified the moment inspection is done, and sent a link to review photos, videos, and track driver location.  
+
+        = link_to "Get Started", root_url, class: "btn btn-primary-inverted btn-lg"
+
+%section.features#features
+  .container
+    .row
+      .inner-block
+        %span.glyphicon.glyphicon-road
+        %h4 DISPATCH
+        %p Keep track of which driver is assigned to a transport, and each inspection with ease.
+
+      .inner-block
+        %span.glyphicon.glyphicon-camera
+        %h4 INSPECT
+        %p Photos are categorized by the section of the vehicle, stored, and connected with each transport order.
+
+      .inner-block
+        %span.glyphicon.glyphicon-map-marker
+        %h4 TRACK
+        %p Find the up to the minute GPS location of each and every shipment.  
+
+      .inner-block
+        %span.glyphicon.glyphicon-gift
+        %h4 DELIVER
+        %p more than vehicles, deliver a superior experience!
+            
+%section.contact#contact
+  .container
+    .row
+      .inner-column
+        %h1 Stay connected for announcements and releases.
+        = form_tag splash_signup_path, role: :form, remote: true do
+          .form-group
+            .input-group
+              = text_field_tag :signup_email, "", class: "form-control", placeholder: 'E-Mail', type: "email"
+              %span.input-group-btn
+                = submit_tag 'Sign up', class: 'btn btn-primary'
+          %small#signup-message
