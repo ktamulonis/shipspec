@@ -1,10 +1,11 @@
 !!! 5
 %html.no-js
   %head
+    %link{:href => "https://s3.amazonaws.com/shipspec/shipspec-logo-sm.png", :rel => "shortcut icon", :type => "image/x-icon"}/
     %meta{ :charset => 'utf-8' }/
     %meta{ 'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1' }/
 
-    = display_meta_tags :site => 'Seed Site', :title => page_title, :reverse => true
+    = display_meta_tags :site => 'Protect', :title => "Shipspec", :reverse => true
 
     %meta{ :name => 'description', :content => '' }/
     %meta{ :name => 'viewport', :content => 'width=device-width' }/
@@ -24,12 +25,7 @@
     %header.slideup.affix-top{ data: { spy: "affix", "offset-top": 10 } }
       = navbar id: "navbar", fluid: true, position: :top, padding: 0 do
         = vertical do
-          = link_to "Home", "#top"
-        = horizontal do
-          = nav class: 'navbar-right' do
-            = link_to "About", "#about"
-            = link_to "Features", "#features"
-            = link_to "Contact", "#contact"
+          = link_to "Shipspec | Protect", "#"
 
     = yield
 
