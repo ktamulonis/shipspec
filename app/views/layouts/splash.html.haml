@@ -20,7 +20,8 @@
 
   %body.splash#top{ data: { spy: "scroll", target: "#navbar"} }
     = render 'chromeframe'
-    //= render 'flashes'
+    #flash-area
+      = render 'flashes'
 
     %header.slideup.affix-top{ data: { spy: "affix", "offset-top": 10 } }
       = navbar id: "navbar", fluid: true, position: :top, padding: 0 do
