@@ -37,8 +37,8 @@
 
 // --------------Components----------------------------
 // Create your own and modify/extend Bootstrap's. For example:
-@import 'components/panel';
-@import 'components/profile_panels';
+//@import 'components/panel';
+//@import 'components/profile_panels';
 
 
 // --------------Sections------------------------------
@@ -52,4 +52,26 @@
 }
 .navbar-default .navbar-brand {
     color: white;
+}
+.cover {
+  height: 100vh;
+  width: 100vw;
+  background-color:red;
+  overflow:hidden;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  height: 0;
+}
+.affix-top .navbar {
+  background: transparent;
+}
+#flash-area {
+  position:absolute;
+  top:10em;
+  width:100%;
 }
