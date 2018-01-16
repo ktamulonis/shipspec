@@ -3,16 +3,16 @@
 $font-family-sans-serif: "Lato";
 $headings-font-weight: 300;
 
-$brand-primary: darken(#428bca, 6.5%);
+$brand-primary: darken(#160987, 6.5%);
 
-$navbar-default-bg: white;
+$navbar-default-bg: red;
 $navbar-default-border: white;
-$navbar-default-link-color: black;
+$navbar-default-link-color: white;
 
 $navbar-default-link-hover-bg: lighten( $brand-primary, 50% );
 $navbar-default-link-active-bg: lighten( $brand-primary, 30% );
 
-$body-bg: white;
+$body-bg: red;
 
 $slideup-navbar-height: 150px;
 
@@ -148,7 +148,13 @@ body.splash {
   height: 100vh;
   width: 100vw;
   background-color:red;
+  overflow:hidden;
 }
 #main-image {
-  
+ 
+}
+.nav-logo {
+  height: 30px;
+  width: 30px;
+  display: block;
 }

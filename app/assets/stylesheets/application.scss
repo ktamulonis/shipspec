@@ -46,4 +46,10 @@
 // resort if you really truly can't style your content more generally.
 // @import 'sections/profile_page';
 
-
+.navbar-default {
+	background-color:red;
+	border-color:red;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
