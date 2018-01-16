@@ -61,7 +61,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec', '~> 3.5.0'
   gem 'rspec-rails', '~> 3.5.0'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'guard-rspec', '~> 4.6.4', require: false
   gem 'database_cleaner'
   gem 'spring-commands-rspec'
