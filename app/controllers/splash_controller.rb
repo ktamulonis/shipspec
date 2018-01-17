@@ -2,7 +2,10 @@ class SplashController < ApplicationController
   skip_before_action :authenticate
 
   def index
+    @spin = Spin.new
   end
+
+  
 
   def signup
     if ENV['MAILCHIMP_SPLASH_SIGNUP_LIST_ID'].blank? or ENV['MAILCHIMP_API_KEY'].blank?
@@ -38,6 +41,7 @@ class SplashController < ApplicationController
 
 
   private
+
 
     def gem_available?(name)
        Gem::Specification.find_by_name(name)

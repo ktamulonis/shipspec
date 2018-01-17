@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117204603) do
+ActiveRecord::Schema.define(version: 20180117215421) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,10 @@ ActiveRecord::Schema.define(version: 20180117204603) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shot1_file_name"
+    t.string "shot1_content_type"
+    t.integer "shot1_file_size"
+    t.datetime "shot1_updated_at"
     t.index ["user_id"], name: "index_spins_on_user_id"
   end
 
