@@ -161,8 +161,8 @@ body.splash {
 }
 #flash-area {
   position:absolute;
-  top:10em;
   width:100%;
+  z-index:1000
 }
 
 ////------- 360 ---------
@@ -182,12 +182,14 @@ body.splash {
 }
 
 .a-spin {
-  animation: rotate 1s linear ;
+  animation: rotate 20s linear ;
   }
 .a-flip {
+  animation: a-flip .5s forwards;
+}
+.a-intro {
   animation: a-flip 2s forwards;
 }
-
 #boxDiv div
 {
   position: absolute;
