@@ -1,15 +1,2 @@
-%h1 This page will show all a users spins 
-%h2 and have a button to start another spin by taking the first shot
-%h3 it may very well accomplish this inside of an angle 
-- @spins.each do |spin|
-  %div.spin-holder{:class => "spin#{spin.id}"}
-    =image_tag spin.shot1:thumb
-    = link_to edit_spin_path(spin), class: "btn btn" do
-      %i.glyphicon.glyphicon-pencil
-    = link_to spin_path(spin), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn" do
-      %i.glyphicon.glyphicon-remove
-
-
-
 = link_to new_spin_path, class: "btn btn" do
-  = render 'temp-spinner'
+  = render 'left-box'
