@@ -1,1 +1,10 @@
+%h1 This is the Spin show page
+%h2 It will inlude all 24 shots in the spin, and display them in viewer
+%h3 it also allows the owner of the spin access to edit or delete the spin. if logged in.
 =image_tag @spin.shot1
+
+- if user_signed_in?
+  - if @spin.user_id == current_user.id
+    = link_to "Edit", edit_spin_path(@spin)
+    = link_to "Delete", spin_path(@spin), method: :delete, data: { confirm: "Delete Spin?" }
+

@@ -3,16 +3,19 @@ class SpinsController < ApplicationController
   before_action :find_spin, only: [:show, :edit, :update, :destroy ]
 
   def index
+    @spins = Spin.all.order("created_at DESC")
   end
-
 
   def new
   	@spin = current_user.spins.build
   end
 
-  def delete
-    @spin.shot1 = nil
-    @spin.save
+  def destroy
+    @spin.destroy
+    redirect_to spins_path
+  end
+
+  def edit
   end
 
   def create
