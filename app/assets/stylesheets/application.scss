@@ -69,7 +69,8 @@
   background: transparent;
 }
 #flash-area {
+  top:15em;
   position:absolute;
-  top:10em;
   width:100%;
+  z-index:1000;
 }

@@ -1,0 +1,17 @@
+#mainDiv
+  #boxDiv.a-flip
+    #box-front
+      %img(src="https://s3.amazonaws.com/shipspec/icon-front.png")
+    #box-back
+      %img(src="https://s3.amazonaws.com/shipspec/icon-back.png") 
+      .flex#video-box{:style => "height: 360px; position: absolute; top: 5px;"}
+        #video-mask{:style => "height:400px; width: 400px; display: block; overflow:hidden;" }  
+          .flex
+            %video{:onclick => "this.play()", :muted => "", :src => "https://s3.amazonaws.com/shipspec/spinstructions.mp4",:style => "margin-top:30px; height: 300px;" }
+
+    #box-left
+      %img(src="https://s3.amazonaws.com/shipspec/icon-left.png")
+    #box-right
+      %img(src="https://s3.amazonaws.com/shipspec/icon-right.png")
+    #box-top
+    #box-bottom

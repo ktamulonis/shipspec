@@ -36,6 +36,9 @@ class SpinsController < ApplicationController
     else
       render 'edit'
     end
+
+  def help
+  end
 end
 
 
