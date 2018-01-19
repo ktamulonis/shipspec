@@ -1,0 +1,9 @@
+#camera-login-buttons{ :style => "position: absolute; top: 150px; height:110px; background-color:white; padding-top:5px; " }
+  =link_to user_facebook_omniauth_authorize_path do
+    %span.fa-7x.fa-layers.fa-fw
+      %i.fab.fa-facebook-square
+      %i.fas.fa-sync-alt.fa-inverse{:style => "color: white", "data-fa-transform" => "shrink-13 up-3 left-4"}
+  %a{:href => "#email_settings", :onclick => "document.getElementById('email_settings').style.display = 'inline';  document.getElementById('camera-forms-area').style.opacity = '1'; document.getElementById('camera-forms-area').style.height = '100%'; document.getElementById('camera-forms-area').style.display = 'block'; "} 
+    %span.fa-7x.fa-layers.fa-fw
+      %i.fas.fa-envelope
+      %i.fas.fa-cog.fa-inverse{:style => "color: white", "data-fa-transform" => "shrink-13 up-3 left-4"}

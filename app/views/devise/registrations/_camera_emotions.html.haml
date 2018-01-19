@@ -1,0 +1,8 @@
+#camera-emotions{ :style => "height:110px; position: absolute; top: 0; padding-top:5px;" }
+  #emotion-box{:style => "display: flex; justify-content: space-between; padding:20px;"}   
+    = link_to registration_path(resource_name), data: { confirm: "Delete Account! :-( so sad to see you go..." }, method: :delete do
+      %i.far.fa-frown.fa-4x
+    = link_to destroy_user_session_path, :method=>:delete, data: { confirm: "Signing Out? Cool, squeeze ya later!" } do
+      %i.fas.fa-sign-out-alt.fa-4x
+    = link_to "#happy" do
+      %i.far.fa-smile.fa-4x
