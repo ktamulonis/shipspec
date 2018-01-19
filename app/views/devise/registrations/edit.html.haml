@@ -3,8 +3,8 @@
     #box-front
       %img(src="https://s3.amazonaws.com/shipspec/icon-front.png")
     #box-back
-      #camera-emotions{ :style => "position: absolute; top: 0; height:110px; padding-top:5px;" }
-        #emotion-box{:style => "display: flex; justify-content: space-between; padding:20px;"}   
+      #camera-emotions{ :style => "position: absolute; top: 0; padding-top:5px;" }
+        #emotion-box{:style => "display: flex; justify-content: space-between; padding:20px; height:100px;"}   
           = link_to registration_path(resource_name), data: { confirm: "Delete Account! :-( so sad to see you go..." }, method: :delete do
             %i.far.fa-frown.fa-4x
           = link_to "#happy" do

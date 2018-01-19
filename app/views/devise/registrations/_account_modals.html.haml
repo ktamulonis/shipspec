@@ -1,1 +1,19 @@
-%h1 this is the account modals section- use it and delete me!
+#happy.modal.fade{:role => "dialog"}
+  .modal-dialog
+    That's awesome your happy :-)
+    .modal-content
+      .modal-header
+        %h1 the best way to celebrate is to share it with your friends!
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        %i.fas.fa-envelope.fa-2x.modal-title
+      .modal-body
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }, wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, boolean: :horizontal_boolean } ) do |f|
+          .panel-body
+            = f.error_notification
+
+            = f.input :email, required: true, autofocus: true
+            = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+            = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+          .panel-footer
+            .buttons
+              = f.button :submit, "Sign in", class: "btn-primary"
