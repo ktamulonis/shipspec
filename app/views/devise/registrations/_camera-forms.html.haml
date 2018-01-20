@@ -1,24 +1,24 @@
-#camera-forms-area{ :style => " position: absolute; bottom:0; background-color: #160987" }
+#camera-forms-area{ :style => " position: absolute; bottom:0; background-color: #160987 " }
   #email-settings-icon{ :style => "position: absolute; left: 140px; top:20px; height:10px;" }
     %span.fa-4x.fa-layers.fa-fw
       %i.fas.fa-envelope
       %i.fas.fa-cog.fa-inverse#little-cog{:style => "color: #160987;", "data-fa-transform" => "shrink-13 up-3 left-4"}
   #email_settings{ :style => "position: absolute; left: 0; top:0 height:10px; " }
     = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-      .error-notification-area{ :style => "position: absolute; left: 0; top:0; color:white;" }
+      .error-notification-area{ :style => "position: absolute; left: 0; top:0; color:white; height: 50px;" }
         = f.error_notification
-      .panel-input-1{ :style => "margin-top:70px;" }
+      .panel-input-1{ :style => "top:70px; height: 50px;" }
         = f.input :email, required: true, autofocus: true, placeholder: "email"
         = if devise_mapping.confirmable? && resource.pending_reconfirmation?
           %p
             Currently waiting confirmation for:
             = resource.unconfirmed_email
-        .panel-input-2{ :style => "margin-top:70px;" }
-          = f.input :password, autocomplete: "off", placeholder: "leave it blank if you don't want to change it", required: false
-        .panel-input-3{ :style => "margin-top:140px;" }
-          = f.input :password_confirmation, required: false, placeholder: "retype new password to confirm your changes"
-        .panel-input-3{ :style => "margin-top:210px;" }
-          = f.input :current_password, placeholder: "we need your current password to confirm your changes", required: true
-        .panel-input-3{ :style => "margin-top:280px;" }
+        .panel-create-password{ :style => "top:70px; height: 50px;" }
+          = f.input :password, autocomplete: "off", placeholder: "create a new password", required: false
+        .panel-retype-password{ :style => "top:140px; height: 50px;" }
+          = f.input :password_confirmation, required: false, placeholder: "retype yor new password to confirm your changes"
+        .panel-current-password{ :style => "top:210px; height: 50px;" }
+          = f.input :current_password, placeholder: "type your old password if you had one", required: true
+        .panel-submit{ :style => "top:280px; height: 50px;" }
           = f.button :submit, "Update", class: "btn-primary"
    

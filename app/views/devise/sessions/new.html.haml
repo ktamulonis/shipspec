@@ -9,7 +9,7 @@
         #camera-loggin-buttons{ :style => "position: absolute; top: 150px; height:110px; background-color:white; padding-top:5px;" }
           = link_to omniauth_authorize_path(resource_name, 'facebook') do
             %i.fab.fa-facebook-square.fa-7x
-          = link_to "#email_form", "data-toggle" => "modal" do
+          = link_to new_user_registration_path do
             %i.fas.fa-envelope.fa-7x
       #box-left
         %img(src="https://s3.amazonaws.com/shipspec/icon-left.png")
