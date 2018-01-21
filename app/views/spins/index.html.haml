@@ -13,7 +13,8 @@
         =link_to "#gallery" do
           %span.fa-7x.fa-layers.fa-fw
             %i.fas.fa-images{:style => "color: white"}
-            %span.fa-layers-counter{:style => "background:lightgreen"} 0
+            %span.fa-layers-counter{:style => "background:lightgreen"}
+              =current_user.spins.count
 
         
     #box-left

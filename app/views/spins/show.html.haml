@@ -1,4 +1,14 @@
+
 =image_tag @spin.shot1
+#angle-clock{:style=> "position: absolute; bottom:0; left:0;"}
+  =image_tag "https://s3.amazonaws.com/shipspec/1200.png", class: "img-responsive"
+  #close-clock{:style=> "position: absolute; top:0; right:5px;"}
+    %i.fas.fa-angle-down.fa-2x{:onclick=> "document.getElementById('angle-clock').style.height = '50px'; document.getElementById('angle-clock').style.width = '50px'; document.getElementById('close-clock').style.display = 'none'; document.getElementById('open-clock').style.display = 'inline';"}
+  #open-clock{:style=> "position: absolute; top:0; right:5px; display:none;"}
+    %i.fas.fa-angle-up.fa-2x{:onclick=> "document.getElementById('angle-clock').style.height = '300px'; document.getElementById('angle-clock').style.width = '300px'; document.getElementById('close-clock').style.display = 'inline'; document.getElementById('open-clock').style.display = 'none';"}
+
+
+
 - if user_signed_in?
   - if @spin.user_id == current_user.id
     = link_to "Edit", edit_spin_path(@spin)
