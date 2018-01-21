@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get '/setup' => 'setup#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :accounts
-  resources :spins
+  resources :spins do
+    resources :shots
+  end
 end

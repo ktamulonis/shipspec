@@ -19,5 +19,6 @@
               .avatar-ring.flex
                 = image_tag current_user.image, class: 'user_avatar'
             - else
-              = current_user.email
+              .avatar-ring.flex
+                %i.far.fa-user-circle.fa-3x
 

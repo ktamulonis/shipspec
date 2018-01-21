@@ -1,15 +1,17 @@
-= link_to root_path, class: "btn btn" do
-  #mainDiv
-    #boxDiv.a-flip
-      #box-front
-        %img(src="https://s3.amazonaws.com/shipspec/icon-front.png")
-      #box-back
-        %img(src="https://s3.amazonaws.com/shipspec/icon-back.png")
-        #camera-new-button{ :style => "position: absolute; top: 150px; height:110px; background-color:white; padding-top:5px;" }
-          %i.fas.fa-camera-retro.fa-7x{:style => "color:green;"}
-      #box-left
-        %img(src="https://s3.amazonaws.com/shipspec/icon-left.png")
-      #box-right
-        %img(src="https://s3.amazonaws.com/shipspec/icon-right.png")
-      #box-top
-      #box-bottom
+#mainDiv
+  #boxDiv.a-flip
+    #box-front
+      %img(src="https://s3.amazonaws.com/shipspec/icon-front.png")
+    #box-back
+      %img(src="https://s3.amazonaws.com/shipspec/icon-back.png")
+        #new-spin-form{ :style => "position: absolute; top: 150px; height:110px; background-color:white; padding-top:5px;" }
+          = simple_form_for @spin do |form|
+            = form.input :shot1, as: :file, label: '12:00'
+            #submit-button
+              = form.button :submit
+    #box-left
+      %img(src="https://s3.amazonaws.com/shipspec/icon-left.png")
+    #box-right
+      %img(src="https://s3.amazonaws.com/shipspec/icon-right.png")
+    #box-top
+    #box-bottom

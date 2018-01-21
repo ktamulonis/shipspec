@@ -36,7 +36,9 @@
                   .avatar-ring.flex
                     = image_tag current_user.image, class: 'user_avatar'
                 - else
-                  = current_user.email
+                  .avatar-ring.flex{:style => "color:#160987"}
+                    %i.far.fa-user-circle.fa-3x
+                  
 
     = yield
 
