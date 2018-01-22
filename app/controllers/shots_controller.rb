@@ -1,5 +1,6 @@
 class ShotsController < ApplicationController
 	before_action :find_shot, only: [:show, :edit, :update, :destroy ]
+  
   def index
     @shots = Shot.all.order("created_at DESC")
   end

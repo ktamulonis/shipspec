@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180122172132) do
+ActiveRecord::Schema.define(version: 20180122213213) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(version: 20180122172132) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_identities_on_user_id"
+  end
+
+  create_table "shot_setups", force: :cascade do |t|
+    t.string "name"
+    t.string "angle"
+    t.text "hints"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "example_file_name"
+    t.string "example_content_type"
+    t.integer "example_file_size"
+    t.datetime "example_updated_at"
+    t.string "clock_file_name"
+    t.string "clock_content_type"
+    t.integer "clock_file_size"
+    t.datetime "clock_updated_at"
   end
 
   create_table "shots", force: :cascade do |t|

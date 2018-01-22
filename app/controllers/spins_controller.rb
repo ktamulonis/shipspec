@@ -1,7 +1,7 @@
 class SpinsController < ApplicationController
   before_action :authenticate_user! #-> routes to the login / signup if not authenticated
   before_action :find_spin, only: [:show, :edit, :update, :destroy ]
-
+  
   def index
     @spins = Spin.all.order("created_at DESC")
   end
@@ -36,8 +36,7 @@ class SpinsController < ApplicationController
     else
       render 'edit'
     end
-
-end
+  end
 
 
 
