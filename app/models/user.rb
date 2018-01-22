@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :oauth_callback
   attr_accessor :current_password
-  has_many :spins
+  has_many :spins, :dependent => :delete_all
 
     
   validates_presence_of   :email, if: :email_required?
