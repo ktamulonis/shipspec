@@ -2,6 +2,8 @@ class User < ApplicationRecord
   attr_accessor :oauth_callback
   attr_accessor :current_password
   has_many :spins, :dependent => :delete_all
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
     
   validates_presence_of   :email, if: :email_required?
@@ -11,6 +13,7 @@ class User < ApplicationRecord
   validates_presence_of     :password, if: :password_required?
   validates_confirmation_of :password, if: :password_required?
   validates_length_of       :password, within: Devise.password_length, allow_blank: true
+
 
   def password_required?
     return false if email.blank? || !email_required?
