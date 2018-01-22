@@ -6,7 +6,7 @@ Rails.application.configure do
     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
     secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
     s3_region: ENV.fetch('AWS_REGION'),
-    s3_protocol: 'https',
+    s3_protocol: 'https'
     }
   }
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
