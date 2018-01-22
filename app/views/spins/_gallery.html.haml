@@ -1,7 +1,7 @@
 %h1 Spins
 .container
-  -@spins.each do |spin|
-    .spin{:class => "spin-#{spin.id}"}
-      =link_to spin_path(spin) do
-        .thumbnail.col-sm-6.col-md-4
-          =image_tag spin.shot1
+  / -@spins.each do |spin|
+  /   .spin{:class => "spin-#{spin.id}"}
+  /     =link_to spin_path(spin) do
+  /       .thumbnail.col-sm-6.col-md-4
+  /         =image_tag spin.shot1
