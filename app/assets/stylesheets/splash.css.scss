@@ -5,14 +5,18 @@ $headings-font-weight: 300;
 
 $brand-primary: darken(#160987, 6.5%);
 
-$navbar-default-bg: red;
+$navbar-default-bg: $brand-primary;
 $navbar-default-border: white;
 $navbar-default-link-color: white;
 
 $navbar-default-link-hover-bg: lighten( $brand-primary, 50% );
 $navbar-default-link-active-bg: lighten( $brand-primary, 30% );
 
-$body-bg: red;
+// $body-bg: red;
+
+body {
+  background: linear-gradient(45deg, red, blue);
+}
 
 $slideup-navbar-height: 150px;
 
@@ -180,6 +184,7 @@ body.splash {
   text-align: right;
   margin-top:6px;
   margin-right:30px;
+  color:#160987;
 }
  
 
@@ -313,3 +318,12 @@ body.splash {
   display: none; 
 }
 
+.form-group{
+  height:100px;
+}
+#gallery {
+  min-height:100vh;
+}
+#gallery h1 {
+  color:white;
+}
