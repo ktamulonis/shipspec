@@ -1,0 +1,30 @@
+#setup{:style=> "height:100vh; overflow:scroll"}
+  .container{:style => "margin-top:10em;"}
+    .page-header
+      = link_to new_shot_setup_path, :class => 'btn btn-primary' do
+        %span.glyphicon.glyphicon-plus
+        New Shot setup
+      %h1 Listing shot_setups
+
+    .table-responsive
+      %table.table.table-striped.table-bordered.table-hover
+        %thead
+          %tr
+            %th Name
+            %th Angle
+            %th Hints
+            %th
+            %th
+            %th
+
+        %tbody
+          - @shot_setups.each do |shot_setup|
+            %tr
+              %td= shot_setup.name
+              %td= shot_setup.angle
+              %td= shot_setup.hints
+              %td= image_tag shot_setup.example(:thumb)
+              %td= image_tag shot_setup.clock(:thumb)
+              %td= link_to 'Show', shot_setup
+              %td= link_to 'Edit', edit_shot_setup_path(shot_setup)
+              %td= link_to 'Destroy', shot_setup, :data => { confirm: 'Are you sure?' }, :method => :delete

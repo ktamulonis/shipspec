@@ -1,7 +1,8 @@
-.container{:style => "margin-top:10em;"}
-  =image_tag @shot_setup.example(:large)
+.container{:style => "margin-top:5em;"}
+
+  =image_tag @shot_setup.example(:large), class: "img-responsive"
   .page-header
-    %h1 
+    %h1
       =@shot_setup.name
     %h2
       = @shot_setup.angle

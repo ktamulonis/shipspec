@@ -1,4 +1,5 @@
-class OmniauthCallbacksController < Devise::OmniauthCallbacksController  
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController 
+require "open-uri" 
   def facebook
     generic_callback( 'facebook' )
   end

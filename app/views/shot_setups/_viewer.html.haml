@@ -1,0 +1,8 @@
+
+- @shot_setups.each do |shot_setup|
+  #view-box{:style=> "position: relative: top:0; height:70vh; overflow:scroll;"}
+    #car
+      =image_tag shot_setup.example(:large), class: 'img-responsive'
+      #clock{:style=> "position:absolute; left:0; bottom:0;"}
+        =image_tag shot_setup.clock(:medium), class: 'img-responsive'
+      

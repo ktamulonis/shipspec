@@ -12,7 +12,7 @@ class ShotSetupsController < ApplicationController
   respond_to :html, :json, :js
 
   def index
-    @shot_setups = ShotSetup.all
+    @shot_setups = ShotSetup.all.order("created_at DESC")
   end 
 
   def show
