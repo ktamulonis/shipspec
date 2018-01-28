@@ -1,6 +1,25 @@
+.container{:style => "margin-top:5em;"}
+  %dl.dl-horizontal
+  =image_tag @shot_setup.example(:large), class: "img-responsive"
+  .page-header
+    %h1
+      =@shot_setup.name
+    %h2
+      = @shot_setup.angle
+    %h3
+      =@shot_setup.hints
+    = link_to shot_setups_path, :class => 'btn btn-default' do
+      %span.glyphicon.glyphicon-list-alt
+      Back
+    = link_to edit_shot_setup_path(@shot_setup), :class => 'btn btn-primary' do
+      %span.glyphicon.glyphicon-pencil
+      Edit
 
 #new-spin-form{ :style => "position: absolute; top: 150px; height:110px; background-color:white; padding-top:5px;" }
   = simple_form_for @spin do |form|
     = form.input :shot1, as: :file, label: '12:00'
     #submit-button{ :style => "position: absolute; top: 150px; height:110px;" }
       = form.button :submit
+    %label.custom-file-upload{:for => "file-upload"}
+      Custom Upload
+    %input#file-upload{:type => "file"}/

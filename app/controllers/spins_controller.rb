@@ -7,7 +7,9 @@ class SpinsController < ApplicationController
   end
 
   def new
+    @shot_setup = ShotSetup.find(1)
   	@spin = current_user.spins.build
+    @shot_setups = ShotSetup.all.order("created_at DESC")
   end
 
   def destroy

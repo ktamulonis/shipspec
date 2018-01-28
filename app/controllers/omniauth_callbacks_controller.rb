@@ -1,5 +1,10 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController 
-require "open-uri" 
+
+
+  def picture_from_url(url)
+    self.picture = open(url)
+  end
+
   def facebook
     generic_callback( 'facebook' )
   end

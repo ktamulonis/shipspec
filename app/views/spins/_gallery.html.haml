@@ -1,4 +1,12 @@
-%h1 Spins
+
+-if current_user.spins.empty?
+  %h1 You have no spins!
+  
+-else
+  %h1 You have 
+  %span
+    =current_user.spins.count
+  %h1 Spins
 .container
   -@spins.each do |spin|
     .spin{:class => "spin-#{spin.id}"}
