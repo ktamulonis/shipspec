@@ -30,6 +30,7 @@ class SpinsController < ApplicationController
   end
 
   def show 
+    @spin = Spin.includes(:shots).find(params[:id])
   end
 
   def update
