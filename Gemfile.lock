@@ -102,6 +102,9 @@ GEM
       addressable
     database_cleaner (1.6.1)
     debug_inspector (0.0.3)
+    delayed_paperclip (3.0.1)
+      activejob (>= 4.2)
+      paperclip (>= 3.3)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -393,6 +396,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   database_cleaner
+  delayed_paperclip
   devise (~> 4.2)
   dotenv-rails
   factory_bot_rails
