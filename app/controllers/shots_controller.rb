@@ -24,7 +24,7 @@ class ShotsController < ApplicationController
     @shot.spin_id = @spin.id
     @shot.user_id = current_user.id
     if @shot.save
-      redirect_to spins_path
+      redirect_to new_spin_shot_path(@spin)
     else
       render 'new'
     end

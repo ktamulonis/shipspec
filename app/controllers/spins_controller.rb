@@ -23,7 +23,7 @@ class SpinsController < ApplicationController
   def create
     @spin = current_user.spins.build(spin_params)
     if @spin.save
-      redirect_to spin_path(@spin)
+      redirect_to new_spin_shot_path(@spin)
     else
       render 'new'
     end
