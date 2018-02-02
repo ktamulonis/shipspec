@@ -1,6 +1,8 @@
 #new_shot_form.flex{:style=> "height:100vh;"}
   %h1 New Shot
   = simple_form_for([@spin, @spin.shots.build]) do |form|
+
     = form.input :picture, as: :file, label: '12:30'
     #submit-button{ :style => "position: absolute; top: 150px; height:110px;" }
       = form.button :submit
+      

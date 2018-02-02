@@ -15,14 +15,16 @@
       %span.glyphicon.glyphicon-pencil
       Edit
 
-#new-spin-form{ :style => "position: absolute; top: 150px; height:110px; background-color:white; padding-top:5px;" }
+#new-spin-form
   = simple_form_for @spin do |form|
+    = file_field_tag "pictures[]", type: :file, multiple: true
     = form.input :shot1, as: :file, label: '12:00'
     #submit-button{ :style => "position: absolute; top: 150px; height:110px;" }
       = form.button :submit
-    %label.custom-file-upload{:for => "file-upload"}
-      Custom Upload
-    %input#file-upload{:type => "file"}/
+
+    / %label.custom-file-upload{:for => "file-upload"}
+    /   Custom Upload
+    / %input#file-upload{:type => "file"}/
 
 / = form_for @spin, html: { class: "form-horizontal", multipart: true } do |f|
 /   .control-group
