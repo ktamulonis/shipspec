@@ -20,14 +20,34 @@ class SpinsController < ApplicationController
   def edit
   end
 
+
   def create
-    @spin = current_user.spins.build(spin_params)
-    if @spin.save
-      redirect_to new_spin_shot_path(@spin)
-    else
-      render 'new'
+  @spin = current_user.spins.build(spin_params)
+    respond_to do |format|
+      if @spin.save
+        if params[:pictures]
+          params[:pictures].each { |picture|
+            @spin.shots.create(picture: picture)
+          }
+        end
+
+        format.html { redirect_to @spin, notice: "Spin was successfully created." }
+        format.json { render json: @spin, status: :created, location: @spin }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @spin.errors, status: :unprocessable_entity }
+      end
     end
   end
+
+  # def create
+  #   @spin = current_user.spins.build(spin_params)
+  #   if @spin.save
+  #     redirect_to new_spin_shot_path(@spin)
+  #   else
+  #     render 'new'
+  #   end
+  # end
 
   def show 
     @spin = Spin.includes(:shots).find(params[:id])
@@ -49,7 +69,7 @@ private
 # Be sure to update your create() and update() controller methods.
 
   def spin_params
-    params.require(:spin).permit(:shot1)
+    params.require(:spin).permit(:shot1, :picture)
   end
 
   def find_spin

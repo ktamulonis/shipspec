@@ -23,3 +23,13 @@
     %label.custom-file-upload{:for => "file-upload"}
       Custom Upload
     %input#file-upload{:type => "file"}/
+
+/ = form_for @spin, html: { class: "form-horizontal", multipart: true } do |f|
+/   .control-group
+/     = f.label :shots, class: "control-label"
+/     .controls
+/       = file_field_tag "pictures[]", type: :file, multiple: true
+/   .form-actions
+/     = f.submit nil, class: "btn btn-primary"
+/     = link_to t(".cancel", default: t("helpers.links.cancel")), |
+/       spins_path, class: "btn btn-mini"                     |

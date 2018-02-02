@@ -1,60 +1,63 @@
-//=render "spinner"
-
-#carousel.carousel.slide.carousel-fade{"data-interval" => "false", "data-ride" => "carousel"}
-  %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "2", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "3", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "4", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "5", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "6", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "7", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "8", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "9", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "10", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "11", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "12", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "13", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "14", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "15", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "16", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "17", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "18", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "19", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "20", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "21", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "22", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "23", "data-target" => "#carousel"}
-    %li{"data-slide-to" => "24", "data-target" => "#carousel"}
+=render "spinner"
 
 
-  .carousel-inner
-    .item.active
-      .slide-content
-        #main_image.flex{:style=> "width:100%; height:100vh; overflow:hidden;"}
-          =image_tag @spin.shot1(:large), class: "img-responsive"
-    - @spin.shots.each do |shot|
-      .item
-        .slide-content
-          #main_image.flex{:style=> "width:100%; height:100vh; overflow:hidden;"}
-            =image_tag shot.picture(:large), class: "img-responsive"
+/ #carousel.carousel.slide.carousel-fade{"data-interval" => "false", "data-ride" => "carousel"}
+/   %ol.carousel-indicators
+/     %li.active{"data-slide-to" => "0", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "1", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "2", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "3", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "4", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "5", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "6", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "7", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "8", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "9", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "10", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "11", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "12", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "13", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "14", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "15", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "16", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "17", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "18", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "19", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "20", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "21", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "22", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "23", "data-target" => "#carousel"}
+/     %li{"data-slide-to" => "24", "data-target" => "#carousel"}
 
-  %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"}
-    %span.glyphicon.glyphicon-chevron-left
-  =link_to "new shot", new_spin_shot_path(@spin)
-  %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"}
-    %span.glyphicon.glyphicon-chevron-right
 
-#angle-clock{:style=> "position: absolute; bottom:0; left:0;"}
-  =image_tag "https://s3.amazonaws.com/shipspec/1200.png", class: "img-responsive"
-  #close-clock{:style=> "position: absolute; top:0; right:5px;"}
-    %i.fas.fa-angle-down.fa-2x{:style=> "color:#160987;", :onclick=> "document.getElementById('angle-clock').style.height = '50px'; document.getElementById('angle-clock').style.width = '50px'; document.getElementById('close-clock').style.display = 'none'; document.getElementById('open-clock').style.display = 'inline';"}
-  #open-clock{:style=> "position: absolute; top:0; right:5px; display:none;"}
-    %i.fas.fa-angle-up.fa-2x{:style=> "color:#160987;", :onclick=> "document.getElementById('angle-clock').style.height = '300px'; document.getElementById('angle-clock').style.width = '300px'; document.getElementById('close-clock').style.display = 'inline'; document.getElementById('open-clock').style.display = 'none';"}
+/   .carousel-inner
+/     .item.active
+/       .slide-content
+/         #main_image.flex{:style=> "width:100%; height:100vh; overflow:hidden;"}
+/           =image_tag @spin.shot1(:large), class: "img-responsive"
+/     - @spin.shots.each do |shot|
+/       .item
+/         .slide-content
+/           #main_image.flex{:style=> "width:100%; height:100vh; overflow:hidden;"}
+/             =image_tag shot.picture(:large), class: "img-responsive"
+
+/   %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"}
+/     %span.glyphicon.glyphicon-chevron-left
+/   =link_to "new shot", new_spin_shot_path(@spin)
+/   %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"}
+/     %span.glyphicon.glyphicon-chevron-right
+
+/ #angle-clock{:style=> "position: absolute; bottom:0; left:0;"}
+/   =image_tag "https://s3.amazonaws.com/shipspec/1200.png", class: "img-responsive"
+/   #close-clock{:style=> "position: absolute; top:0; right:5px;"}
+/     %i.fas.fa-angle-down.fa-2x{:style=> "color:#160987;", :onclick=> "document.getElementById('angle-clock').style.height = '50px'; document.getElementById('angle-clock').style.width = '50px'; document.getElementById('close-clock').style.display = 'none'; document.getElementById('open-clock').style.display = 'inline';"}
+/   #open-clock{:style=> "position: absolute; top:0; right:5px; display:none;"}
+/     %i.fas.fa-angle-up.fa-2x{:style=> "color:#160987;", :onclick=> "document.getElementById('angle-clock').style.height = '300px'; document.getElementById('angle-clock').style.width = '300px'; document.getElementById('close-clock').style.display = 'inline'; document.getElementById('open-clock').style.display = 'none';"}
 
 
 - if user_signed_in?
   - if @spin.user_id == current_user.id
+    = link_to "new show", new_spin_shot_path(@spin)
     = link_to "Edit", edit_spin_path(@spin)
     = link_to "Delete", spin_path(@spin), method: :delete, data: { confirm: "Delete Spin?" }
+

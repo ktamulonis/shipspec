@@ -1,7 +1,6 @@
 class ShotsController < ApplicationController
 	before_action :find_spin
   before_action :find_shot, only: [:show, :edit, :update, :destroy ]
-  
 
   def index
     @shots = Shot.all.order("created_at DESC")
@@ -26,7 +25,7 @@ class ShotsController < ApplicationController
     if @shot.save
       redirect_to new_spin_shot_path(@spin)
     else
-      render 'new'
+      render "new"
     end
   end
 

@@ -14,3 +14,56 @@
     ga('create', '#{ ENV['GOOGLE_ANALYTICS_SITE_ID'] }', 'auto');
     ga('send', 'pageview');
 %script{:defer => "defer", :src => "https://use.fontawesome.com/releases/v5.0.1/js/all.js"}
+%script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css"}
+%script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
+%script{:crossorigin => "anonymous", :integrity => "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"}
+%script{:crossorigin => "anonymous", :integrity => "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
+
+:javascript
+  var changeSpeed, output, slider, toggleSpin, toggleStop;
+
+  slider = document.getElementById('myRange');
+
+  output = document.getElementById('demo');
+
+  pauseSpin = function() {
+  $('.carousel').carousel('pause');
+  }
+
+  changeSpeed = function(speed) {
+  $('.carousel').carousel({
+  interval: speed
+  });
+  console.log('change interval to ' + speed);
+  };
+
+  toggleSpin = function() {
+  var x, y, z;
+  x = document.getElementById('spin-button');
+  x.style.display = 'none';
+  y = document.getElementById('stop-button');
+  y.style.display = 'block';
+  z = document.getElementById('myRange');
+  z.style.display = 'block';
+  $('.carousel').carousel({
+  interval: 100
+  });
+  };
+
+  toggleStop = function() {
+  var x, y, z;
+  x = document.getElementById('spin-button');
+  x.style.display = 'block';
+  y = document.getElementById('stop-button');
+  y.style.display = 'none';
+  z = document.getElementById('myRange');
+  z.style.display = 'none';
+  $('.carousel').carousel('pause');
+  };
+
+  slider.oninput = function(speed) {
+  speed = this.value;
+  output.innerHTML = speed;
+  pauseSpin();
+  changeSpeed(speed);
+  };
