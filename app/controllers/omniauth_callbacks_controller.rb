@@ -1,6 +1,4 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController 
-
-
   def picture_from_url(url)
     self.picture = open(url)
   end

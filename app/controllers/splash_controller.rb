@@ -1,5 +1,4 @@
 class SplashController < ApplicationController
-
   def index
     @spin = Spin.new
   end

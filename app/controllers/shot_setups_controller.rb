@@ -1,5 +1,8 @@
 class ShotSetupsController < ApplicationController
+  before_action :set_shot_setup, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json, :js
   before_action :authenticate
+  
   def authenticate
     unless ENV['HTTP_AUTH_USERNAME'].blank? or ENV['HTTP_AUTH_PASSWORD'].blank?
       authenticate_or_request_with_http_basic do |username, password|
@@ -7,9 +10,6 @@ class ShotSetupsController < ApplicationController
       end
     end
   end
-  before_action :set_shot_setup, only: [:show, :edit, :update, :destroy]
-
-  respond_to :html, :json, :js
 
   def index
     @shot_setups = ShotSetup.all.order("created_at DESC")
