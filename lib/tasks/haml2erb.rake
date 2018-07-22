@@ -9,7 +9,7 @@ task :haml2erb do
 
     data = File.read( f )
 
-    resp = HTTParty.post( "http://haml2erb.herokuapp.com/api.html", { query: { haml: data } } )
+    resp = HTTParty.post( "https://haml2erb.herokuapp.com/api.html", { query: { haml: data } } )
 
     puts "FROM--------"
     puts data

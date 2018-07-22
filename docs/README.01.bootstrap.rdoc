@@ -35,6 +35,6 @@ Better scaffolding means that it's easier to just whip up things to get started.
 
 Signup for google analytics and setup the site id.
 
-http://www.google.com/analytics/
+https://www.google.com/analytics/
 
 
